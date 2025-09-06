@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# fluxbox startup-script:
+#
+# Lines starting with a '#' are ignored.
+export GTK_THEME=Win11-Fantasy-Dark
+
+# Change your keymap:
+xmodmap "/home/helia/.Xmodmap"
+
+# Applications you want to run with fluxbox.
+# MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
+#
+# unclutter -idle 2 &
+# wmnd &
+# wmsmixer -w &
+# idesk &
+
+# And last but not least we start fluxbox.
+# Because it is the last app you have to run it with ''exec'' before it.
+picom -b &
+nitrogen --restore &
+dunst &
+pcmanfm --desktop &
+exec fluxbox
+# or if you want to keep a log:
+# exec fluxbox -log "/home/helia/.fluxbox/log"
